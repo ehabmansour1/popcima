@@ -62,9 +62,7 @@ img {
   max-width: 100%;
 }
 /* End Global Rules */
-.container {
-  padding: 30px 0;
-}
+
 .list--Tabsui {
   display: none;
 }
