@@ -52,8 +52,12 @@ function directLink(href) {
     .then((res) => {
       let temp = document.createElement("div");
       temp.innerHTML = res;
+      document.querySelector(".player iframe").style.height = "60vh";
       document.querySelector(".result").innerHTML = "";
-      console.log(temp.querySelector(".List--Download--Wecima--Single"));
+      document.querySelector(".player iframe").src = "";
+      document.querySelector(".player iframe").src = temp
+        .querySelector(".Inner--WatchServersEmbed iframe")
+        .getAttribute("data-lazy-src");
       document
         .querySelector(".result")
         .append(temp.querySelector(".List--Download--Wecima--Single"));
@@ -65,6 +69,7 @@ function parseSeries(href) {
     .then((res) => {
       let temp = document.createElement("div");
       temp.innerHTML = res;
+      document.querySelector(".player iframe").style.height = "0";
       if (temp.querySelector(".List--Seasons--Episodes")) {
         document.querySelector(".result").innerHTML = "";
         document
@@ -85,6 +90,7 @@ function parseSeries(href) {
                 let temp = document.createElement("div");
                 temp.innerHTML = res;
                 document.querySelector(".result").innerHTML = "";
+                document.querySelector(".player iframe").style.height = "0";
                 document
                   .querySelector(".result")
                   .appendChild(
@@ -106,6 +112,7 @@ function parseSeries(href) {
         });
       } else {
         document.querySelector(".result");
+        document.querySelector(".player iframe").style.height = "0";
         document
           .querySelector(".result")
           .append(temp.querySelector(".Episodes--Seasons--Episodes"));
@@ -126,6 +133,7 @@ function parseSeries(href) {
 }
 document.querySelector(".exit").addEventListener("click", () => {
   document.querySelector(".modal").classList.add("hide");
+  document.querySelector(".player iframe").src = "";
 });
 document.querySelector(".query").onfocus = () => {
   document.querySelector(".query").style.borderColor = "initial";
