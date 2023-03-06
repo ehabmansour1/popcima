@@ -10,8 +10,8 @@ document.querySelector(".search-button").addEventListener("click", function () {
   if (query.length > 0) {
     fetch(
       type.value === "series"
-        ? `https://wecimaa.cfd/search/${query}/list/series/`
-        : `https://wecimaa.cfd/AjaxCenter/Searching/${query}/`
+        ? `https://wecimaa.beauty/search/${query}/list/series/`
+        : `https://wecimaa.beauty/AjaxCenter/Searching/${query}/`
     )
       .then((res) => res.text())
       .then((res) => {
